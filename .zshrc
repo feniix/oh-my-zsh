@@ -71,3 +71,5 @@ alias dquilt="quilt --quiltrc=${HOME}/.quiltrc-dpkg"
 #for virtualenvwrapper
 export WORKON_HOME=$HOME/.virtualenvs
 source /usr/local/bin/virtualenvwrapper.sh
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
