@@ -40,18 +40,6 @@ alias dos2unix="todos -d"
 alias unix2dos="todos -u"
 alias mtr="mtr --curses"
 
-export JAVA_HOME=/usr/lib/jvm/java-6-openjdk
-export M2_HOME=${HOME}/dev/mvn3
-export M2SH_HOME=${HOME}/dev/mvnsh
-export GRAILS_HOME=${HOME}/dev/grails
-export ANT_OPTS="-Xmx2024m -XX:MaxPermSize=256m"
-export MAVEN_OPTS="-Xmx2024m -XX:MaxPermSize=256m"
-export GRADLE_HOME=${HOME}/dev/gradle
-export GRADLE_OPTS="-Xmx2024m -Xms1024m -XX:MaxPermSize=256m"
-export GROOVY_HOME=${HOME}/dev/groovy
-export ANDROIDOS_HOME=${HOME}/dev/android-sdk
-export PATH=${HOME}/bin:${M2_HOME}/bin:${M2SH_HOME}/bin:${GRADLE_HOME}/bin:${GROOVY_HOME}/bin:$PATH
-export PATH=${ANDROIDOS_HOME}/tools:${ANDROIDOS_HOME}/platform-tools:$PATH
 
 # history settings
 setopt INC_APPEND_HISTORY AUTO_REMOVE_SLASH
@@ -61,8 +49,10 @@ HISTSIZE=10000
 SAVEHIST=10000
 
 #AMAZON EC2
-export EC2_PRIVATE_KEY=$HOME/.ec2/pk-P6ZPXSQPEET3LCNKAJCCVZUO32SRR7SV.pem
-export EC2_CERT=$HOME/.ec2/cert-P6ZPXSQPEET3LCNKAJCCVZUO32SRR7SV.pem
+export EC2_KEYPAIR=LLZ7SYALAZRSWLZGO2DSWCCOHTXUIHWI
+export EC2_URL=https://ec2.us-east-1.amazonaws.com
+export EC2_PRIVATE_KEY=$HOME/.ec2/pk-LLZ7SYALAZRSWLZGO2DSWCCOHTXUIHWI.pem
+export EC2_CERT=$HOME/.ec2/cert-LLZ7SYALAZRSWLZGO2DSWCCOHTXUIHWI.pem
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
@@ -72,5 +62,22 @@ alias dquilt="quilt --quiltrc=${HOME}/.quiltrc-dpkg"
 export WORKON_HOME=$HOME/.virtualenvs
 source /usr/local/bin/virtualenvwrapper.sh
 
+export JAVA_HOME=/opt/jdk1.7.0_04
+export M2_HOME=${HOME}/dev/mvn3
+export M2SH_HOME=${HOME}/dev/mvnsh
+export GRAILS_HOME=${HOME}/dev/grails
+export ANT_OPTS="-Xmx2024m -XX:MaxPermSize=256m"
+export MAVEN_OPTS="-Xmx2024m -XX:MaxPermSize=256m"
+export GRADLE_HOME=${HOME}/dev/gradle
+export GRADLE_OPTS="-Xmx2024m -Xms1024m -XX:MaxPermSize=256m"
+export GROOVY_HOME=${HOME}/dev/groovy
+export ANDROIDOS_HOME=${HOME}/dev/android-sdk
+export PATH=${JAVA_HOME}/bin:${HOME}/bin:$GRAILS_HOME/bin:${M2_HOME}/bin:${M2SH_HOME}/bin:${GRADLE_HOME}/bin:${GROOVY_HOME}/bin:$PATH
+export PATH=${ANDROIDOS_HOME}/tools:${ANDROIDOS_HOME}/platform-tools:$PATH
+export FORGE_HOME=$HOME/dev/forge
+export CEYLON_HOME=$HOME/dev/ceylon
+export PATH=$PATH:$CEYLON_HOME/bin
+export PATH=$PATH:$FORGE_HOME/bin
 export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 export PATH=$PATH:$HOME/dev/sbt2 # Add sublime_text2 to the PATH
+
