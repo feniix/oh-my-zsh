@@ -60,7 +60,7 @@ alias dquilt="quilt --quiltrc=${HOME}/.quiltrc-dpkg"
 export WORKON_HOME=$HOME/.virtualenvs
 source /usr/local/bin/virtualenvwrapper.sh
 
-export JAVA_HOME=/opt/jdk1.7.0_04
+export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64
 export M2_HOME=${HOME}/dev/mvn3
 export M2SH_HOME=${HOME}/dev/mvnsh
 export GRAILS_HOME=${HOME}/dev/grails
