@@ -60,8 +60,8 @@ alias dquilt="quilt --quiltrc=${HOME}/.quiltrc-dpkg"
 export WORKON_HOME=$HOME/.virtualenvs
 source /usr/local/bin/virtualenvwrapper.sh
 
-export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64
-export M2_HOME=${HOME}/dev/mvn3
+export JAVA_HOME=/usr/lib/jvm/java-6-openjdk-amd64
+#export M2_HOME=${HOME}/dev/mvn3
 export M2SH_HOME=${HOME}/dev/mvnsh
 export GRAILS_HOME=${HOME}/dev/grails
 export ANT_OPTS="-Xmx2024m -XX:MaxPermSize=256m"
@@ -70,7 +70,7 @@ export GRADLE_HOME=${HOME}/dev/gradle
 export GRADLE_OPTS="-Xmx2024m -Xms1024m -XX:MaxPermSize=256m"
 export GROOVY_HOME=${HOME}/dev/groovy
 export ANDROIDOS_HOME=${HOME}/dev/android-sdk
-export PATH=${JAVA_HOME}/bin:${HOME}/bin:$GRAILS_HOME/bin:${M2_HOME}/bin:${M2SH_HOME}/bin:${GRADLE_HOME}/bin:${GROOVY_HOME}/bin:$PATH
+export PATH=${JAVA_HOME}/bin:${HOME}/bin:$GRAILS_HOME/bin:${M2_HOME}/bin:${GRADLE_HOME}/bin:${GROOVY_HOME}/bin:$PATH
 export PATH=${ANDROIDOS_HOME}/tools:${ANDROIDOS_HOME}/platform-tools:$PATH
 export FORGE_HOME=$HOME/dev/forge
 export CEYLON_HOME=$HOME/dev/ceylon
