@@ -61,7 +61,7 @@ export WORKON_HOME=$HOME/.virtualenvs
 source /usr/local/bin/virtualenvwrapper.sh
 
 export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64
-#export M2_HOME=${HOME}/dev/mvn3
+export M2_HOME=${HOME}/dev/mvn3
 export M2SH_HOME=${HOME}/dev/mvnsh
 export GRAILS_HOME=${HOME}/dev/grails
 export ANT_OPTS="-Xmx2024m -XX:MaxPermSize=256m"
