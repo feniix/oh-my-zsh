@@ -60,23 +60,36 @@ alias dquilt="quilt --quiltrc=${HOME}/.quiltrc-dpkg"
 export WORKON_HOME=$HOME/.virtualenvs
 source /usr/local/bin/virtualenvwrapper.sh
 
-export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64
-export M2_HOME=${HOME}/dev/mvn3
-export M2SH_HOME=${HOME}/dev/mvnsh
-export GRAILS_HOME=${HOME}/dev/grails
+export JAVA_HOME=/usr/lib/jvm/java-7-oracle
+export PATH=${JAVA_HOME}/bin:$PATH
+
+export ANT_HOME=${HOME}/dev/ant
+export PATH=${ANT_HOME}/bin:$PATH
 export ANT_OPTS="-Xmx2024m -XX:MaxPermSize=256m"
+
+export M2_HOME=${HOME}/dev/mvn3
+export PATH=${M2_HOME}/bin:$PATH
 export MAVEN_OPTS="-Xmx2024m -XX:MaxPermSize=256m"
-export GRADLE_HOME=${HOME}/dev/gradle
-export GRADLE_OPTS="-Xmx2024m -Xms1024m -XX:MaxPermSize=256m"
-export GROOVY_HOME=${HOME}/dev/groovy
+
+#export GRADLE_HOME=${HOME}/dev/gradle
+#export PATH=${GRADLE_HOME}/bin:$PATH
+export GRADLE_OPTS="-Xmx2024m -Xms2024m -XX:MaxPermSize=256m"
+
+#export GRAILS_HOME=${HOME}/dev/grails
+#export PATH=${GRAILS_HOME}/bin:$PATH
+
+#export GROOVY_HOME=${HOME}/dev/groovy
+#export PATH=${GROOVY_HOME}/bin:$PATH
+
 export ANDROIDOS_HOME=${HOME}/dev/android-sdk
-export PATH=${JAVA_HOME}/bin:${HOME}/bin:$GRAILS_HOME/bin:${M2_HOME}/bin:${GRADLE_HOME}/bin:${GROOVY_HOME}/bin:$PATH
 export PATH=${ANDROIDOS_HOME}/tools:${ANDROIDOS_HOME}/platform-tools:$PATH
-export FORGE_HOME=$HOME/dev/forge
-export CEYLON_HOME=$HOME/dev/ceylon
-export PATH=$PATH:$CEYLON_HOME/bin
-export PATH=$PATH:$FORGE_HOME/bin
-export PATH=$PATH:$HOME/dev/sbt2 # Add sublime_text2 to the PATH
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+# This loads NVM
+[[ -s /home/otaeguis/.nvm/nvm.sh ]] && . /home/otaeguis/.nvm/nvm.sh 
+
+#THIS MUST BE AT THE END OF THE FILE FOR GVM TO WORK!!!
+[[ -s "/home/otaeguis/.gvm/bin/gvm-init.sh" ]] && source "/home/otaeguis/.gvm/bin/gvm-init.sh"
+
+rm -rf ~/.freerdp/known_hosts
