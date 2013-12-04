@@ -29,7 +29,7 @@ alias ohmyzsh="vi ~/.oh-my-zsh"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(nvm-zsh git git-flow debian ruby python rvm svn pip ssh-agent vagrant github gem command-not-found ant history-substring-search gnu-utils mvn knife zsh-syntax-highlighting urltools vundle sublime)
+plugins=(nvm-zsh git git-flow debian docker ruby python rvm svn pip ssh-agent vagrant github gem command-not-found ant history-substring-search gnu-utils mvn knife zsh-syntax-highlighting urltools vundle sublime)
 
 source $ZSH/oh-my-zsh.sh
 
