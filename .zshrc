@@ -71,6 +71,9 @@ export M2_HOME=${HOME}/dev/mvn3
 export PATH=${M2_HOME}/bin:$PATH
 export MAVEN_OPTS="-Xmx2024m -XX:MaxPermSize=256m"
 
+export PACKER_PATH=${HOME}/apps/packer
+export PATH=${PACKER_PATH}:$PATH
+
 #export GRADLE_HOME=${HOME}/dev/gradle
 #export PATH=${GRADLE_HOME}/bin:$PATH
 export GRADLE_OPTS="-Xmx2024m -Xms2024m -XX:MaxPermSize=256m"
