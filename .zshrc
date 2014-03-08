@@ -29,7 +29,60 @@ alias ohmyzsh="vi ~/.oh-my-zsh"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(nvm-zsh git git-flow debian docker ruby python rvm svn pip ssh-agent vagrant github gem command-not-found ant history-substring-search gnu-utils mvn knife zsh-syntax-highlighting urltools vundle sublime)
+plugins=(
+ant 
+autojump
+battery 
+bundler 
+capistrano 
+coffee 
+command-not-found 
+colored-man
+colorize
+debian 
+docker 
+encode64
+extract
+fabric
+git 
+git-flow 
+github 
+gitignore
+gem 
+gnu-utils 
+gpg-agent
+gradle
+grails
+history-substring-search 
+iwhois
+jira
+jruby
+knife 
+last-working-dir
+mercurial
+mvn 
+node
+npm
+nvm
+pip 
+pj
+pylint
+python 
+rbfu
+rsync
+ruby 
+rvm 
+screen
+ssh-agent 
+sublime 
+sudo
+svn 
+systemadmin
+urltools 
+vagrant 
+vundle 
+zsh-syntax-highlighting 
+)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -96,3 +149,7 @@ export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 [[ -s "/home/otaeguis/.gvm/bin/gvm-init.sh" ]] && source "/home/otaeguis/.gvm/bin/gvm-init.sh"
 
 rm -rf ~/.freerdp/known_hosts
+
+#config for the ssh-agent plugin
+zstyle :omz:plugins:ssh-agent agent-forwarding on
+zstyle :omz:plugins:ssh-agent identities id_rsa 
