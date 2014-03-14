@@ -153,3 +153,5 @@ rm -rf ~/.freerdp/known_hosts
 #config for the ssh-agent plugin
 zstyle :omz:plugins:ssh-agent agent-forwarding on
 zstyle :omz:plugins:ssh-agent identities id_rsa 
+
+PROJECT_PATHS=(~/projects/src)
