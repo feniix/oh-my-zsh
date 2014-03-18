@@ -31,7 +31,6 @@ alias ohmyzsh="vi ~/.oh-my-zsh"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(
 ant 
-autojump
 battery 
 bundler 
 capistrano 
@@ -110,8 +109,8 @@ export EC2_CERT=$HOME/.ec2/cert-LLZ7SYALAZRSWLZGO2DSWCCOHTXUIHWI.pem
 alias dquilt="quilt --quiltrc=${HOME}/.quiltrc-dpkg"
 
 #for virtualenvwrapper
-export WORKON_HOME=$HOME/.virtualenvs
-source /usr/local/bin/virtualenvwrapper.sh
+#export WORKON_HOME=$HOME/.virtualenvs
+#source /usr/local/bin/virtualenvwrapper.sh
 
 export JAVA_HOME=/usr/lib/jvm/java-7-oracle
 export PATH=${JAVA_HOME}/bin:$PATH
