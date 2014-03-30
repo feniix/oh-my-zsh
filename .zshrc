@@ -137,9 +137,6 @@ export PATH=${ANDROIDOS_HOME}/tools:${ANDROIDOS_HOME}/platform-tools:$PATH
 # This loads NVM
 [[ -s /home/otaeguis/.nvm/nvm.sh ]] && . /home/otaeguis/.nvm/nvm.sh 
 
-#THIS MUST BE AT THE END OF THE FILE FOR GVM TO WORK!!!
-[[ -s "/home/otaeguis/.gvm/bin/gvm-init.sh" ]] && source "/home/otaeguis/.gvm/bin/gvm-init.sh"
-
 rm -rf ~/.freerdp/known_hosts
 
 #config for the ssh-agent plugin
@@ -162,3 +159,5 @@ PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 alias rsynccopy="rsync --partial --progress --append --rsh=ssh -r -h "
 alias rsyncmove="rsync --partial --progress --append --rsh=ssh -r -h --remove-sent-files"
 
+#THIS MUST BE AT THE END OF THE FILE FOR GVM TO WORK!!!
+[[ -s "/home/otaeguis/.gvm/bin/gvm-init.sh" ]] && source "/home/otaeguis/.gvm/bin/gvm-init.sh"
