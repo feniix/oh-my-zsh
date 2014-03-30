@@ -121,15 +121,7 @@ export MAVEN_OPTS="-Xmx2024m -XX:MaxPermSize=256m"
 export PACKER_PATH=${HOME}/apps/packer
 export PATH=${PACKER_PATH}:$PATH
 
-#export GRADLE_HOME=${HOME}/dev/gradle
-#export PATH=${GRADLE_HOME}/bin:$PATH
 export GRADLE_OPTS="-Xmx2024m -Xms2024m -XX:MaxPermSize=256m"
-
-#export GRAILS_HOME=${HOME}/dev/grails
-#export PATH=${GRAILS_HOME}/bin:$PATH
-
-#export GROOVY_HOME=${HOME}/dev/groovy
-#export PATH=${GROOVY_HOME}/bin:$PATH
 
 export ANDROIDOS_HOME=${HOME}/dev/android-sdk
 export PATH=${ANDROIDOS_HOME}/tools:${ANDROIDOS_HOME}/platform-tools:$PATH
