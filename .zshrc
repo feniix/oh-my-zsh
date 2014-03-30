@@ -31,6 +31,7 @@ alias ohmyzsh="vi ~/.oh-my-zsh"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(
 ant 
+aws
 battery 
 bundler 
 capistrano 
@@ -92,7 +93,6 @@ alias dos2unix="todos -d"
 alias unix2dos="todos -u"
 alias mtr="mtr --curses"
 
-
 # history settings
 setopt INC_APPEND_HISTORY AUTO_REMOVE_SLASH
 setopt LIST_TYPES LONG_LIST_JOBS HIST_IGNORE_ALL_DUPS HIST_REDUCE_BLANKS HIST_IGNORE_SPACE
@@ -101,16 +101,11 @@ HISTSIZE=10000
 SAVEHIST=10000
 
 #AMAZON EC2
-export EC2_KEYPAIR=LLZ7SYALAZRSWLZGO2DSWCCOHTXUIHWI
-export EC2_URL=https://ec2.us-east-1.amazonaws.com
-export EC2_PRIVATE_KEY=$HOME/.ec2/pk-LLZ7SYALAZRSWLZGO2DSWCCOHTXUIHWI.pem
-export EC2_CERT=$HOME/.ec2/cert-LLZ7SYALAZRSWLZGO2DSWCCOHTXUIHWI.pem
+export EC2_HOME=~/dev/ec2-api-tools
+export PATH=${EC2_HOME}/bin:$PATH
+source ~/.ec2/environment
 
 alias dquilt="quilt --quiltrc=${HOME}/.quiltrc-dpkg"
-
-#for virtualenvwrapper
-#export WORKON_HOME=$HOME/.virtualenvs
-#source /usr/local/bin/virtualenvwrapper.sh
 
 export JAVA_HOME=/usr/lib/jvm/java-7-oracle
 export PATH=${JAVA_HOME}/bin:$PATH
@@ -139,8 +134,6 @@ export GRADLE_OPTS="-Xmx2024m -Xms2024m -XX:MaxPermSize=256m"
 export ANDROIDOS_HOME=${HOME}/dev/android-sdk
 export PATH=${ANDROIDOS_HOME}/tools:${ANDROIDOS_HOME}/platform-tools:$PATH
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 # This loads NVM
 [[ -s /home/otaeguis/.nvm/nvm.sh ]] && . /home/otaeguis/.nvm/nvm.sh 
 
@@ -154,3 +147,18 @@ zstyle :omz:plugins:ssh-agent agent-forwarding on
 zstyle :omz:plugins:ssh-agent identities id_rsa 
 
 PROJECT_PATHS=(~/projects/src)
+
+alias veewee="BUNDLE_GEMFILE=~/projects/src/veewee/Gemfile bundle exec veewee"
+
+export PATH=${PATH}:/usr/local/bin
+
+export GOROOT=${HOME}/dev/go
+export PATH=${GOROOT}/bin:$PATH
+
+source $HOME/.rvm/scripts/rvm
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+# copy / move with progress bar
+alias rsynccopy="rsync --partial --progress --append --rsh=ssh -r -h "
+alias rsyncmove="rsync --partial --progress --append --rsh=ssh -r -h --remove-sent-files"
+
