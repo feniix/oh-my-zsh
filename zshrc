@@ -89,10 +89,6 @@ source $ZSH/oh-my-zsh.sh
 export DEBFULLNAME="Sebastian Otaegui"
 export DEBEMAIL="feniix@gmail.com"
 
-alias dos2unix="todos -d"
-alias unix2dos="todos -u"
-alias mtr="mtr --curses"
-
 # history settings
 setopt INC_APPEND_HISTORY AUTO_REMOVE_SLASH
 setopt LIST_TYPES LONG_LIST_JOBS HIST_IGNORE_ALL_DUPS HIST_REDUCE_BLANKS HIST_IGNORE_SPACE
@@ -137,19 +133,31 @@ zstyle :omz:plugins:ssh-agent identities id_rsa
 
 PROJECT_PATHS=(~/projects/src)
 
-alias veewee="BUNDLE_GEMFILE=~/projects/src/veewee/Gemfile bundle exec veewee"
 
 export PATH=${PATH}:/usr/local/bin
 
 export GOROOT=${HOME}/dev/go
 export PATH=${GOROOT}/bin:$PATH
 
-# copy / move with progress bar
-alias rsynccopy="rsync --partial --progress --append --rsh=ssh -r -h "
-alias rsyncmove="rsync --partial --progress --append --rsh=ssh -r -h --remove-sent-files"
 
 #THIS MUST BE AT THE END OF THE FILE FOR GVM TO WORK!!!
 [[ -s "/home/otaeguis/.gvm/bin/gvm-init.sh" ]] && source "/home/otaeguis/.gvm/bin/gvm-init.sh"
 
 PATH=$HOME/.rvm/bin:$PATH 
 source $HOME/.rvm/scripts/rvm
+
+PATH=$HOME/bin:$PATH
+
+#--------- begin alias ---------#
+
+alias veewee="BUNDLE_GEMFILE=~/projects/src/veewee/Gemfile bundle exec veewee"
+
+alias dos2unix="todos -d"
+alias unix2dos="todos -u"
+alias mtr="mtr --curses"
+
+# copy / move with progress bar
+alias rsynccopy="rsync --partial --progress --append --rsh=ssh -r -h "
+alias rsyncmove="rsync --partial --progress --append --rsh=ssh -r -h --remove-sent-files"
+
+#-------------------------------#
