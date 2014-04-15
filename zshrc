@@ -103,7 +103,7 @@ SAVEHIST=10000
 #AMAZON EC2
 export EC2_HOME=~/dev/ec2-api-tools
 export PATH=${EC2_HOME}/bin:$PATH
-source ~/.ec2/environment
+source ~/.aws/environment
 
 alias dquilt="quilt --quiltrc=${HOME}/.quiltrc-dpkg"
 
@@ -144,12 +144,12 @@ export PATH=${PATH}:/usr/local/bin
 export GOROOT=${HOME}/dev/go
 export PATH=${GOROOT}/bin:$PATH
 
-source $HOME/.rvm/scripts/rvm
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-
 # copy / move with progress bar
 alias rsynccopy="rsync --partial --progress --append --rsh=ssh -r -h "
 alias rsyncmove="rsync --partial --progress --append --rsh=ssh -r -h --remove-sent-files"
 
 #THIS MUST BE AT THE END OF THE FILE FOR GVM TO WORK!!!
 [[ -s "/home/otaeguis/.gvm/bin/gvm-init.sh" ]] && source "/home/otaeguis/.gvm/bin/gvm-init.sh"
+
+PATH=$HOME/.rvm/bin:$PATH 
+source $HOME/.rvm/scripts/rvm
