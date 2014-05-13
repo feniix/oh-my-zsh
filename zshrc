@@ -122,8 +122,7 @@ export GRADLE_OPTS="-Xmx2024m -Xms2024m -XX:MaxPermSize=256m"
 export ANDROIDOS_HOME=${HOME}/dev/android-sdk
 export PATH=${ANDROIDOS_HOME}/tools:${ANDROIDOS_HOME}/platform-tools:$PATH
 
-# This loads NVM
-[[ -s /home/otaeguis/.nvm/nvm.sh ]] && . /home/otaeguis/.nvm/nvm.sh 
+#[ -s "/home/otaeguis/.nvm/nvm.sh" ] && . "/home/otaeguis/.nvm/nvm.sh" # This loads nvm
 
 rm -rf ~/.freerdp/known_hosts
 
