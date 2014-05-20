@@ -124,7 +124,7 @@ PROJECT_PATHS=(~/projects/src)
 #THIS MUST BE AT THE END OF THE FILE FOR GVM TO WORK!!!
 [[ -s "$HOME/.gvm/bin/gvm-init.sh" ]] && source "$HOME/.gvm/bin/gvm-init.sh"
 
-export PATH=/usr/local/bin:${PATH}
+export PATH=/usr/local/bin:/usr/local/sbin:${PATH}
 
 PATH=$HOME/bin:$PATH
 
