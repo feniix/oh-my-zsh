@@ -126,6 +126,9 @@ PROJECT_PATHS=(~/projects/src)
 
 export PATH=/usr/local/bin:/usr/local/sbin:${PATH}
 
+# for macports
+export PATH=${PATH}:/opt/local/bin:/opt/local/sbin
+
 PATH=$HOME/bin:$PATH
 
 PATH=$HOME/.rvm/bin:$PATH 
