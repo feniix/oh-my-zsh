@@ -33,6 +33,8 @@ plugins=(
 ant 
 aws
 battery 
+brew
+brew-cask
 bundler 
 capistrano 
 coffee 
@@ -97,32 +99,20 @@ HISTSIZE=10000
 SAVEHIST=10000
 
 #AMAZON EC2
-export EC2_HOME=~/dev/ec2-api-tools
-export PATH=${EC2_HOME}/bin:$PATH
+export EC2_AMITOOL_HOME="/usr/local/Cellar/ec2-ami-tools/1.5.2/libexec"
+export EC2_HOME="/usr/local/Cellar/ec2-api-tools/1.6.13.0/libexec"
 source ~/.aws/environment
 
 alias dquilt="quilt --quiltrc=${HOME}/.quiltrc-dpkg"
 
-export JAVA_HOME=/usr/lib/jvm/java-7-oracle
+export JAVA_HOME="$(/usr/libexec/java_home)"
 export PATH=${JAVA_HOME}/bin:$PATH
 
-export ANT_HOME=${HOME}/dev/ant
-export PATH=${ANT_HOME}/bin:$PATH
 export ANT_OPTS="-Xmx2024m -XX:MaxPermSize=256m"
 
-export M2_HOME=${HOME}/dev/mvn3
-export PATH=${M2_HOME}/bin:$PATH
 export MAVEN_OPTS="-Xmx2024m -XX:MaxPermSize=256m"
 
-export PACKER_PATH=${HOME}/apps/packer
-export PATH=${PACKER_PATH}:$PATH
-
 export GRADLE_OPTS="-Xmx2024m -Xms2024m -XX:MaxPermSize=256m"
-
-export ANDROIDOS_HOME=${HOME}/dev/android-sdk
-export PATH=${ANDROIDOS_HOME}/tools:${ANDROIDOS_HOME}/platform-tools:$PATH
-
-#[ -s "/home/otaeguis/.nvm/nvm.sh" ] && . "/home/otaeguis/.nvm/nvm.sh" # This loads nvm
 
 rm -rf ~/.freerdp/known_hosts
 
@@ -132,23 +122,23 @@ zstyle :omz:plugins:ssh-agent identities id_rsa
 
 PROJECT_PATHS=(~/projects/src)
 
-
-export PATH=${PATH}:/usr/local/bin
-
-export GOROOT=${HOME}/dev/go
-export PATH=${GOROOT}/bin:$PATH
-
-
 #THIS MUST BE AT THE END OF THE FILE FOR GVM TO WORK!!!
-[[ -s "/home/otaeguis/.gvm/bin/gvm-init.sh" ]] && source "/home/otaeguis/.gvm/bin/gvm-init.sh"
+[[ -s $HOME/.gvm/bin/gvm-init.sh ]] && source $HOME/.gvm/bin/gvm-init.sh
 
-PATH=$HOME/.rvm/bin:$PATH 
-source $HOME/.rvm/scripts/rvm
+export PATH=/usr/local/bin:/usr/local/sbin:${PATH}
+
+# for macports
+export PATH=${PATH}:/opt/local/bin:/opt/local/sbin
 
 PATH=$HOME/bin:$PATH
 
-#--------- begin alias ---------#
+if [ -f $HOME/.rvm/scripts/rvm ];
+then
+    export PATH=$HOME/.rvm/bin:$PATH 
+    source $HOME/.rvm/scripts/rvm
+fi
 
+#--------- begin alias ---------#
 alias veewee="BUNDLE_GEMFILE=~/projects/src/veewee/Gemfile bundle exec veewee"
 
 alias dos2unix="todos -d"
