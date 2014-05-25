@@ -34,6 +34,7 @@ ant
 aws
 battery 
 brew
+brew-cask
 bundler 
 capistrano 
 coffee 
@@ -122,7 +123,7 @@ zstyle :omz:plugins:ssh-agent identities id_rsa
 PROJECT_PATHS=(~/projects/src)
 
 #THIS MUST BE AT THE END OF THE FILE FOR GVM TO WORK!!!
-[[ -s "$HOME/.gvm/bin/gvm-init.sh" ]] && source "$HOME/.gvm/bin/gvm-init.sh"
+[[ -s $HOME/.gvm/bin/gvm-init.sh ]] && source $HOME/.gvm/bin/gvm-init.sh
 
 export PATH=/usr/local/bin:/usr/local/sbin:${PATH}
 
@@ -131,8 +132,11 @@ export PATH=${PATH}:/opt/local/bin:/opt/local/sbin
 
 PATH=$HOME/bin:$PATH
 
-PATH=$HOME/.rvm/bin:$PATH 
-source $HOME/.rvm/scripts/rvm
+if [ -f $HOME/.rvm/scripts/rvm ];
+then
+    export PATH=$HOME/.rvm/bin:$PATH 
+    source $HOME/.rvm/scripts/rvm
+fi
 
 #--------- begin alias ---------#
 alias veewee="BUNDLE_GEMFILE=~/projects/src/veewee/Gemfile bundle exec veewee"
